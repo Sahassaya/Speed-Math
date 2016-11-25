@@ -20,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
         //Bind Widget
         imageView = (ImageView) findViewById(R.id.imageView2);
 
+
+
+
+
+
+
+
+
+
         //image controller
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
