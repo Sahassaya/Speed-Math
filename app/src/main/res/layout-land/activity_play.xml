@@ -22,7 +22,8 @@
         android:textColor="@android:color/holo_blue_dark"
         android:textStyle="normal|bold"
         android:layout_height="40dp"
-        android:layout_width="60dp" />
+        android:layout_width="60dp"
+        android:clickable="true" />
 
 
     <TextView
@@ -36,7 +37,8 @@
         android:textStyle="normal|bold"
         android:textColor="@android:color/holo_blue_dark"
         android:layout_width="60dp"
-        android:layout_height="40dp" />
+        android:layout_height="40dp"
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/textView5"
@@ -49,7 +51,8 @@
         android:layout_width="60dp"
         android:layout_height="40dp"
         android:textColor="@android:color/holo_blue_dark"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/textView6"
@@ -62,7 +65,8 @@
         android:layout_height="40dp"
         android:layout_width="60dp"
         android:textColor="@android:color/holo_blue_dark"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:clickable="true" />
 
     <TextView
         android:text=" 20 + 30 = ?"
