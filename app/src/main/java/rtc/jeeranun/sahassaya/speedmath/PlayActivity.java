@@ -55,6 +55,11 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 Integer.toString(secondAnInt) + " = ?");
 
         //Change Choice
+        TextView[] textViews = new TextView[]{ch1TextView, ch2TextView, ch3TextView, ch4TextView};
+        for (int i=0;i<textViews.length;i++) {
+            textViews[i].setText(Integer.toString(random.nextInt(100)));
+        }
+
         switch (trueChoiceAnInt) {
             case 1:
                 ch1TextView.setText(Integer.toString(answerAnInt));
