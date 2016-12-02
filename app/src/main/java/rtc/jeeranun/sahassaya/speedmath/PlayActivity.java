@@ -6,17 +6,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Explicit
     private TextView questionTextView, ch1TextView, ch2TextView,
             ch3TextView, ch4TextView;
-    private int chooseAnswerAnInt = 0;
+    private Random random;
+    private int firstAnInt, secondAnInt, answerAnInt, trueChoiceAnInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+        //Setup
+        random = new Random();
 
         // Bind Widger
         questionTextView = (TextView) findViewById(R.id.textView7);
@@ -31,7 +37,22 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         ch3TextView.setOnClickListener(this);
         ch4TextView.setOnClickListener(this);
 
+        //Play Controller
+        playController();
+
     }   // Main Method
+
+    private void playController() {
+
+        firstAnInt = random.nextInt(99);
+        secondAnInt = random.nextInt(99);
+        answerAnInt = firstAnInt + secondAnInt;
+        trueChoiceAnInt = random.nextInt(4) + 1;
+
+        questionTextView.setText(Integer.toString(firstAnInt) + " + " +
+        Integer.toString(secondAnInt) + " = ?");
+
+    }// playController
 
     @Override
     public void onClick(View view) {
@@ -51,6 +72,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 checkAnswer(Integer.parseInt(ch4TextView.getText().toString()));
                 break;
         }   // switch
+
+        playController();
 
     }   // onClick
 
