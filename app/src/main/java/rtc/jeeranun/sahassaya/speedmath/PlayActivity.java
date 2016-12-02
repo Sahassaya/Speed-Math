@@ -12,9 +12,10 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
     //Explicit
     private TextView questionTextView, ch1TextView, ch2TextView,
-            ch3TextView, ch4TextView;
+            ch3TextView, ch4TextView, scoreTextView;
     private Random random;
-    private int firstAnInt, secondAnInt, answerAnInt, trueChoiceAnInt;
+    private int firstAnInt, secondAnInt, answerAnInt,
+            trueChoiceAnInt, scoreAnInt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         ch2TextView = (TextView) findViewById(R.id.textView4);
         ch3TextView = (TextView) findViewById(R.id.textView5);
         ch4TextView = (TextView) findViewById(R.id.textView6);
+        scoreTextView = (TextView) findViewById(R.id.textView8);
 
         //Click Controller
         ch1TextView.setOnClickListener(this);
@@ -44,8 +46,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
     private void playController() {
 
-        firstAnInt = random.nextInt(99);
-        secondAnInt = random.nextInt(99);
+        firstAnInt = random.nextInt(100);
+        secondAnInt = random.nextInt(100);
         answerAnInt = firstAnInt + secondAnInt;
         trueChoiceAnInt = random.nextInt(4) + 1;
         Log.d("3decV1", "trueChoose ==> " + trueChoiceAnInt);
@@ -56,7 +58,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
         //Change Choice
         TextView[] textViews = new TextView[]{ch1TextView, ch2TextView, ch3TextView, ch4TextView};
-        for (int i=0;i<textViews.length;i++) {
+        for (int i = 0; i < textViews.length; i++) {
             textViews[i].setText(Integer.toString(random.nextInt(100)));
         }
 
@@ -77,6 +79,9 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 ch1TextView.setText(Integer.toString(answerAnInt));
                 break;
         }   // switch
+
+
+
 
     }// playController
 
@@ -105,6 +110,17 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
     private void checkAnswer(int intChoice) {
         Log.d("3decV1", "You Choose Answer ==> " + intChoice);
+        Log.d("3decV1", "Answer ==> " + answerAnInt);
+
+        if (intChoice == answerAnInt) {
+            scoreAnInt += 1;
+        }
+
+        //Change Score
+        Log.d("3decV1", "Score ==> " + scoreTextView);
+        scoreTextView.setText("Score = " + Integer.toString(scoreAnInt));
+
+
     }
 
 }   // Main Class
