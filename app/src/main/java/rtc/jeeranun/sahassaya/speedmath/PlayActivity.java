@@ -48,9 +48,30 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         secondAnInt = random.nextInt(99);
         answerAnInt = firstAnInt + secondAnInt;
         trueChoiceAnInt = random.nextInt(4) + 1;
+        Log.d("3decV1", "trueChoose ==> " + trueChoiceAnInt);
 
+        //Change Question
         questionTextView.setText(Integer.toString(firstAnInt) + " + " +
-        Integer.toString(secondAnInt) + " = ?");
+                Integer.toString(secondAnInt) + " = ?");
+
+        //Change Choice
+        switch (trueChoiceAnInt) {
+            case 1:
+                ch1TextView.setText(Integer.toString(answerAnInt));
+                break;
+            case 2:
+                ch2TextView.setText(Integer.toString(answerAnInt));
+                break;
+            case 3:
+                ch3TextView.setText(Integer.toString(answerAnInt));
+                break;
+            case 4:
+                ch4TextView.setText(Integer.toString(answerAnInt));
+                break;
+            default:
+                ch1TextView.setText(Integer.toString(answerAnInt));
+                break;
+        }   // switch
 
     }// playController
 
