@@ -108,6 +108,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
     }   // onClick
 
+
+
     private void checkAnswer(int intChoice) {
         Log.d("3decV1", "You Choose Answer ==> " + intChoice);
         Log.d("3decV1", "Answer ==> " + answerAnInt);
