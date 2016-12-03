@@ -210,7 +210,9 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             heardAnInt += 1;
         } else {
             Intent intent = new Intent(PlayActivity.this, ShowScore.class);
+            intent.putExtra("Score", scoreAnInt);
             startActivity(intent);
+            finish();
         }
     }
 
