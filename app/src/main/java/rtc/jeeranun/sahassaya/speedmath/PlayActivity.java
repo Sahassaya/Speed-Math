@@ -22,6 +22,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     private int firstAnInt, secondAnInt, answerAnInt,
             trueChoiceAnInt, scoreAnInt = 0;
     private int timeAnInt = 30; // นี่คือเวลาลูป
+    private ImageView rabbit1ImageView,rabbit2ImageView,rabbit3ImageView,rabbit4ImageView,rabbit5ImageView,rabbit6ImageView, rabbit7ImageView;
+    private ImageView[] imageViews;
     private ImageView heart1ImageView,heart2ImageView, heart3ImageView;
     private  int heardAnInt = 0;
     @Override
@@ -44,6 +46,17 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         heart1ImageView = (ImageView) findViewById(R.id.imageView);
         heart2ImageView = (ImageView) findViewById(R.id.imageView3);
         heart3ImageView = (ImageView) findViewById(R.id.imageView4);
+        rabbit1ImageView = (ImageView) findViewById(R.id.imageView5);
+        rabbit2ImageView = (ImageView) findViewById(R.id.imageView6);
+        rabbit3ImageView = (ImageView) findViewById(R.id.imageView7);
+        rabbit4ImageView = (ImageView) findViewById(R.id.imageView8);
+        rabbit5ImageView = (ImageView) findViewById(R.id.imageView9);
+        rabbit6ImageView = (ImageView) findViewById(R.id.imageView10);
+        rabbit7ImageView = (ImageView) findViewById(R.id.imageView11);
+
+        imageViews = new ImageView[]{rabbit1ImageView,rabbit2ImageView,rabbit3ImageView,
+                rabbit4ImageView,rabbit5ImageView,rabbit6ImageView,rabbit7ImageView};
+
 
         //Click Controller
         ch1TextView.setOnClickListener(this);
@@ -158,7 +171,32 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         scoreTextView.setText("Score = " + Integer.toString(scoreAnInt));
 
 
-    }
+        for (int i=0;i<imageViews.length;i++){
+            imageViews [i].setVisibility(View.INVISIBLE);
+
+    } //for
+        if (scoreAnInt <3) {
+            imageViews[0].setVisibility(View.VISIBLE);
+        } else if (scoreAnInt < 6) {
+            imageViews[1].setVisibility(View.VISIBLE);
+        } else if (scoreAnInt <9) {
+            imageViews[2].setVisibility(View.VISIBLE);
+        } else if (scoreAnInt <12) {
+            imageViews[3].setVisibility(View.VISIBLE);
+        } else if (scoreAnInt <15) {
+            imageViews[4].setVisibility(View.VISIBLE);
+        } else if (scoreAnInt < 18) {
+            imageViews[5].setVisibility(View.VISIBLE);
+        } else {
+            imageViews[6].setVisibility(View.VISIBLE);
+        }
+
+
+
+
+        }  //checkanser
+
+
 
     private void deleteHeard() {
 
