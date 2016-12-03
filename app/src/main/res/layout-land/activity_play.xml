@@ -15,7 +15,7 @@
         android:id="@+id/textView3"
         android:background="@drawable/bgtext"
         android:gravity="center_vertical|center_horizontal"
-        android:text="20"
+        android:text="10"
         android:textSize="27sp"
         android:layout_marginTop="220dp"
         android:layout_marginLeft="160dp"
@@ -44,7 +44,7 @@
         android:id="@+id/textView5"
         android:background="@drawable/bgtext"
         android:gravity="center_vertical|center_horizontal"
-        android:text="20"
+        android:text="30"
         android:textSize="27sp"
         android:layout_marginLeft="350dp"
         android:layout_marginTop="200dp"
@@ -58,7 +58,7 @@
         android:id="@+id/textView6"
         android:background="@drawable/bgtext"
         android:gravity="center_vertical|center_horizontal"
-        android:text="20"
+        android:text="40"
         android:textSize="27sp"
         android:layout_marginLeft="420dp"
         android:layout_marginTop="150dp"
@@ -78,4 +78,15 @@
         android:textColor="@color/colorAccent"
         android:layout_marginLeft="20dp"
         android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Score = 0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+
+
 </RelativeLayout>
