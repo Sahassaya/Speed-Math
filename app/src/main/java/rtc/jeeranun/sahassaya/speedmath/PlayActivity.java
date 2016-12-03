@@ -1,6 +1,7 @@
 package rtc.jeeranun.sahassaya.speedmath;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -14,10 +15,11 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     //Explicit  master
     //sahassaya
     private TextView questionTextView, ch1TextView, ch2TextView,
-            ch3TextView, ch4TextView, scoreTextView;
+            ch3TextView, ch4TextView, scoreTextView,timeTextView;
     private Random random;
     private int firstAnInt, secondAnInt, answerAnInt,
             trueChoiceAnInt, scoreAnInt = 0;
+    private int timeAnInt = 30; // นี่คือเวลาลูป
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         ch3TextView = (TextView) findViewById(R.id.textView5);
         ch4TextView = (TextView) findViewById(R.id.textView6);
         scoreTextView = (TextView) findViewById(R.id.textView8);
+        timeTextView = (TextView) findViewById(R.id.textView9);
 
         //Click Controller
         ch1TextView.setOnClickListener(this);
@@ -45,7 +48,27 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         //Play Controller
         playController();
 
+        countTime();
+
     }   // Main Method
+
+    private void countTime() {
+        if (timeAnInt == 0) {
+            //
+        } // if
+
+        timeAnInt -= 1;
+        timeTextView.setText(Integer.toString(timeAnInt) + "วินาที");
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                countTime();
+            }
+        },1000);
+
+    }      // countTime
 
     private void playController() {
 

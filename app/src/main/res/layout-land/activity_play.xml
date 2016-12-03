@@ -89,4 +89,16 @@
         android:textStyle="normal|bold" />
 
 
+
+    <TextView
+        android:text="30 sec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_marginTop="100dp"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+
+
 </RelativeLayout>
