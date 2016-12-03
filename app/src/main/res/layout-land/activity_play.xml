@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_play"
     android:layout_width="match_parent"
@@ -86,7 +87,8 @@
         android:id="@+id/textView8"
         android:textSize="36sp"
         android:textColor="@color/colorAccent"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_centerHorizontal="true" />
 
 
 
@@ -99,6 +101,34 @@
         android:textSize="36sp"
         android:textColor="@color/colorAccent"
         android:textStyle="normal|bold" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hearts1"
+            android:id="@+id/imageView"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hearts1"
+            android:id="@+id/imageView3"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hearts1"
+            android:id="@+id/imageView4"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
 </RelativeLayout>

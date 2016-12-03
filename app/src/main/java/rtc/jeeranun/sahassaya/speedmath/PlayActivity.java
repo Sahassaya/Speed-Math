@@ -1,10 +1,12 @@
 package rtc.jeeranun.sahassaya.speedmath;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -20,7 +22,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     private int firstAnInt, secondAnInt, answerAnInt,
             trueChoiceAnInt, scoreAnInt = 0;
     private int timeAnInt = 30; // นี่คือเวลาลูป
-
+    private ImageView heart1ImageView,heart2ImageView, heart3ImageView;
+    private  int heardAnInt = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,9 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         ch4TextView = (TextView) findViewById(R.id.textView6);
         scoreTextView = (TextView) findViewById(R.id.textView8);
         timeTextView = (TextView) findViewById(R.id.textView9);
+        heart1ImageView = (ImageView) findViewById(R.id.imageView);
+        heart2ImageView = (ImageView) findViewById(R.id.imageView3);
+        heart3ImageView = (ImageView) findViewById(R.id.imageView4);
 
         //Click Controller
         ch1TextView.setOnClickListener(this);
@@ -54,7 +60,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
     private void countTime() {
         if (timeAnInt == 0) {
-            //
+            timeAnInt = 30;
+            deleteHeard();
         } // if
 
         timeAnInt -= 1;
@@ -77,7 +84,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         answerAnInt = firstAnInt + secondAnInt;
         trueChoiceAnInt = random.nextInt(4) + 1;
         Log.d("3decV1", "trueChoose ==> " + trueChoiceAnInt);
-
+        timeAnInt = 30;
         //Change Question
         questionTextView.setText(Integer.toString(firstAnInt) + " + " +
                 Integer.toString(secondAnInt) + " = ?");
@@ -142,6 +149,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
         if (intChoice == answerAnInt) {
             scoreAnInt += 1;
+        } else {
+            deleteHeard();
         }
 
         //Change Score
@@ -149,6 +158,22 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         scoreTextView.setText("Score = " + Integer.toString(scoreAnInt));
 
 
+    }
+
+    private void deleteHeard() {
+
+
+        ImageView[] imageViews = new ImageView[]
+                {heart3ImageView,heart2ImageView,heart1ImageView};
+
+
+        if (heardAnInt < imageViews.length) {
+            imageViews[heardAnInt].setVisibility(View.INVISIBLE);
+            heardAnInt += 1;
+        } else {
+            Intent intent = new Intent(PlayActivity.this, ShowScore.class);
+            startActivity(intent);
+        }
     }
 
 }   // Main Class
