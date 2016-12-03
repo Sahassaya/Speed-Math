@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
 
-    //Explicit
+    //Explicit  master
     private TextView questionTextView, ch1TextView, ch2TextView,
             ch3TextView, ch4TextView, scoreTextView;
     private Random random;
