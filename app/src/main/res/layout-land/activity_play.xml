@@ -20,7 +20,7 @@
         android:layout_marginTop="230dp"
         android:verticalScrollbarPosition="defaultPosition"
         android:layout_marginLeft="0dp"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -204,7 +204,8 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/heard1"
             android:id="@+id/imageView4"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:elevation="1dp" />
     </LinearLayout>
 
 
